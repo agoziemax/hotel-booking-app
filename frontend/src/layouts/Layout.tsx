@@ -1,11 +1,5 @@
-
-
 function Layout() {
-  return (
-    <div className="flex flex-col min-h-screen">
-     <p>Hi</p>
-    </div>
-  )
+  return <div className='flex flex-col min-h-screen'>{/* <Header/> */}</div>;
 }
 
-export default Layout
+export default Layout;
