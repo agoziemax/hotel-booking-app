@@ -11,7 +11,7 @@ function Layout({ children}: Props) {
     <div className='flex flex-col min-h-screen'>
       <Header />
       <Hero/>
-      <div className='container mx-auto py-10 border border-red-500 flex-1'>
+      <div className='container mx-auto py-10 flex-1'>
         {children}
       </div>
       <Footer/>
