@@ -9,6 +9,7 @@ function App() {
       <Layout>
        <p>Home Pages</p>
       </Layout>}/>
+     <Route path='/register'/>
 
       <Route path='/search' element={<Layout>
        <p>Search Page</p>
