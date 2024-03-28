@@ -7,7 +7,7 @@ import bcrypt from 'bcryptjs';
 const router = express.Router();
 
 router.post(
-  '/auth/login',
+  '/login',
   [
     check('email', 'Email is required').isEmail(),
     check('password', 'Password with 6 or more characters required').isLength({ min: 6 }),
@@ -29,7 +29,7 @@ router.post(
         return res.status(400).json({ message: 'Invalid Credentials' });
       }
 
-      const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET_KET as string, { expiresIn: '1d' });
+      const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET_KEY as string, { expiresIn: '1d' });
 
       res.cookie('auth_token', token, {
         httpOnly: true,
