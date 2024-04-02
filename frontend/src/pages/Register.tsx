@@ -9,11 +9,15 @@ type RegisterFormData = {
 };
 
 function Register() {
-  const { register, watch, handleSubmit } = useForm<RegisterFormData>();
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterFormData>();
 
-  const onSubmit = handleSubmit((data)=>{
-console.log(data);
-
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
   });
 
   return (
@@ -26,6 +30,7 @@ console.log(data);
             className="border rounded w-full py-1 px-2 font-normal"
             {...register("firstName", { required: "This field is required" })}
           ></input>
+          {errors.firstName && <span className="text-red-500">{errors.firstName.message}</span>}
         </label>
         <label htmlFor="" className="text-sm text-gray-700 font-bold flex-1">
           Last Name
@@ -33,6 +38,7 @@ console.log(data);
             className="border rounded w-full py-1 px-2 font-normal"
             {...register("lastName", { required: "Last name is required" })}
           ></input>
+          {errors.lastName && <span className="text-red-500">{errors.lastName.message}</span>}
         </label>
       </div>
       <label className="text-sm text-gray-700 font-bold flex-1">
@@ -42,6 +48,7 @@ console.log(data);
           className="border rounded w-full py-1 px-2 font-normal"
           {...register("email", { required: "Email is required" })}
         ></input>
+        {errors.email && <span className="text-red-500">{errors.email.message}</span>}
       </label>
       <label className="text-sm text-gray-700 font-bold flex-1">
         Password
@@ -56,6 +63,7 @@ console.log(data);
             },
           })}
         ></input>
+        {errors.password && <span className="text-red-500">{errors.password.message}</span>}
       </label>
       <label className="text-sm text-gray-700 font-bold flex-1">
         Confirm Password
@@ -72,6 +80,7 @@ console.log(data);
             },
           })}
         ></input>
+        {errors.confirmPassword && <span className="text-red-500">{errors.confirmPassword.message}</span>}
       </label>
       <span>
         <button type="submit" className="bg-green-700 font-bold p-2 text-white hover:bg-green-500">
