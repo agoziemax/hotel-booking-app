@@ -9,10 +9,15 @@ type RegisterFormData = {
 };
 
 function Register() {
-  const { register } = useForm<RegisterFormData>();
+  const { register, watch, handleSubmit } = useForm<RegisterFormData>();
+
+  const onSubmit = handleSubmit((data)=>{
+console.log(data);
+
+  });
 
   return (
-    <form className="flex flex-col gap-5">
+    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
       <h2 className="text-3xl font-bold">Create an Account</h2>
       <div className="flex flex-col md:flex-row gap-5">
         <label htmlFor="" className="flex-1 text-sm text-gray-700 font-bold">
@@ -58,14 +63,21 @@ function Register() {
           type="password"
           className="border rounded w-full py-1 px-2 font-normal"
           {...register("confirmPassword", {
-           validate: (val)=>{
-           if (!val) {
-            return "This field is required"
-           }
-           }
+            validate: (val) => {
+              if (!val) {
+                return "This field is required";
+              } else if (watch("password") !== val) {
+                return "Passwords do not match";
+              }
+            },
           })}
         ></input>
       </label>
+      <span>
+        <button type="submit" className="bg-green-700 font-bold p-2 text-white hover:bg-green-500">
+          Create account
+        </button>
+      </span>
     </form>
   );
 }
