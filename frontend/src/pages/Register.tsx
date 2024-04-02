@@ -58,11 +58,11 @@ function Register() {
           type="password"
           className="border rounded w-full py-1 px-2 font-normal"
           {...register("confirmPassword", {
-            required: "Password is required",
-            minLength: {
-              value: 6,
-              message: "Password must be 6 or more characters",
-            },
+           validate: (val)=>{
+           if (!val) {
+            return "This field is required"
+           }
+           }
           })}
         ></input>
       </label>
