@@ -33,7 +33,7 @@ function Register() {
       <label className="text-sm text-gray-700 font-bold flex-1">
         Email
         <input
-        type="email"
+          type="email"
           className="border rounded w-full py-1 px-2 font-normal"
           {...register("email", { required: "Email is required" })}
         ></input>
@@ -41,19 +41,29 @@ function Register() {
       <label className="text-sm text-gray-700 font-bold flex-1">
         Password
         <input
-        type="password"
+          type="password"
           className="border rounded w-full py-1 px-2 font-normal"
-          {...register("password", { required: "Password is required", minLength:{
-            value: 6,
-            message: 'Password must be 6 or more characters'
-          } })}
+          {...register("password", {
+            required: "Password is required",
+            minLength: {
+              value: 6,
+              message: "Password must be 6 or more characters",
+            },
+          })}
         ></input>
       </label>
       <label className="text-sm text-gray-700 font-bold flex-1">
         Confirm Password
         <input
+          type="password"
           className="border rounded w-full py-1 px-2 font-normal"
-          {...register("confirmPassword", { required: "Password is required" })}
+          {...register("confirmPassword", {
+            required: "Password is required",
+            minLength: {
+              value: 6,
+              message: "Password must be 6 or more characters",
+            },
+          })}
         ></input>
       </label>
     </form>
