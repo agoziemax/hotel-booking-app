@@ -8,7 +8,7 @@ function Header() {
           <Link to="/">MernHolidays.com</Link>
         </span>
         <span className="flex space-x-2">
-          <Link to="/sign-in" className="flex bg-white items-center text-green-600 px-3 font-bold hover:bg-gray-100 ">
+          <Link to="/register" className="flex bg-white items-center text-green-600 px-3 font-bold hover:bg-gray-100 ">
             Sign In Here
           </Link>
         </span>

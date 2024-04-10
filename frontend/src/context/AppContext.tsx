@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 type ToastMessage = {
   message: string;
@@ -11,6 +11,34 @@ type AppContext = {
 
 const AppContext = createContext<AppContext | undefined>(undefined);
 
-const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
+export const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   return <AppContext.Provider value={{ showToast: () => undefined }}>{children}</AppContext.Provider>;
 };
+
+export const useAppContext = () =>{
+  const context = useContext(AppContext);
+return context as AppContext;
+
+}
+
+// without typescript
+
+// const AppContext = createContext();
+
+// export const AppContextProvider = ({ children }) => {
+//   const showToast = (toastMessage) => {
+//     // Implementation for showing a toast message
+//     console.log(`Showing toast message: ${toastMessage.message}`);
+//   };
+
+//   const contextValue = {
+//     showToast,
+//   };
+
+//   return <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>;
+// };
+
+// export const useAppContext = () => {
+//   const context = useContext(AppContext);
+//   return context;
+// };
