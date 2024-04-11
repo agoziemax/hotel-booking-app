@@ -19,7 +19,7 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
     <AppContext.Provider
       value={{
         showToast: (toastMessage) => {
-          console.log(toastMessage);
+          setToast(toastMessage);
         },
       }}
     >
