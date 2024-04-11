@@ -12,14 +12,23 @@ type AppContext = {
 const AppContext = createContext<AppContext | undefined>(undefined);
 
 export const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
-  return <AppContext.Provider value={{ showToast: () => undefined }}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider
+      value={{
+        showToast: (toastMessage) => {
+          console.log(toastMessage);
+        },
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
-export const useAppContext = () =>{
+export const useAppContext = () => {
   const context = useContext(AppContext);
-return context as AppContext;
-
-}
+  return context as AppContext;
+};
 
 // without typescript
 
