@@ -41,7 +41,11 @@ router.post(
       console.log(error);
       res.status(500).send({ message: 'Something went wrong' });
     }
-  }
+  },
+
+  router.get("/validate-token", verifyToken, (req:Request, res:Response) => {
+   res.status(200).send({userId: req.userId})
+  })
 );
 
 export default router;
