@@ -2,6 +2,7 @@ import { RegisterFormData } from "./pages/Register";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
+
 const register = async (formData: RegisterFormData) => {
   const response = await fetch(`${API_BASE_URL}/api/users/register`, {
     method: "POST",
@@ -19,6 +20,10 @@ const register = async (formData: RegisterFormData) => {
   }
 };
 
+const validateToken = async ()=>{
+ 
+}
 export default {
   register,
+  validateToken
 };
