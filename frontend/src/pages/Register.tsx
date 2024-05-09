@@ -67,6 +67,7 @@ function Register() {
         ></input>
         {errors.email && <span className="text-red-500">{errors.email.message}</span>}
       </label>
+
       <label className="text-sm text-gray-700 font-bold flex-1">
         Password
         <input
@@ -82,6 +83,7 @@ function Register() {
         ></input>
         {errors.password && <span className="text-red-500">{errors.password.message}</span>}
       </label>
+      
       <label className="text-sm text-gray-700 font-bold flex-1">
         Confirm Password
         <input
