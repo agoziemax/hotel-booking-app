@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import Register from './pages/Register';
+import Login from './pages/Login';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route
-          path='/'
+          path="/"
           element={
             <Layout>
               <p>Home Pages</p>
@@ -15,7 +16,7 @@ function App() {
           }
         />
         <Route
-          path='/search'
+          path="/search"
           element={
             <Layout>
               <p>Search Page</p>
@@ -23,15 +24,23 @@ function App() {
           }
         />
         <Route
-          path='/register'
+          path="/register"
           element={
             <Layout>
-              <Register/>
+              <Register />
+            </Layout>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Layout>
+              <Login />
             </Layout>
           }
         />
 
-        <Route path='*' element={<Navigate to='/' />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

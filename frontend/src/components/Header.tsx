@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 
 function Header() {
-  const { isLoggedIn} = useAppContext();
+  const { isLoggedIn } = useAppContext();
 
   return (
     <div className="bg-blue-600 py-6">
@@ -15,9 +15,10 @@ function Header() {
             <>
               <Link to="/my-bookings">My bookings</Link>
               <Link to="/my-hotels">My bookings</Link>
+              <button>Sign out</button>
             </>
           ) : (
-            <Link to="/register" className="flex bg-white items-center text-blue-600 px-3 font-bold hover:bg-gray-100 ">
+            <Link to="/login" className="flex bg-white items-center text-blue-600 px-3 font-bold hover:bg-gray-100 ">
               Sign In Here
             </Link>
           )}
