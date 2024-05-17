@@ -40,6 +40,19 @@ const signIn = async (formData: SignInFormData) => {
   return body;
 };
 
+const logout = async () => {
+const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
+  method: "POST",
+  credentials: "include",
+});
+ const body = await response.json();
+ 
+ if (!response.ok) {
+   throw new Error(body.message);
+ }
+ return body;
+}
+
 const validateToken = async () => {
   const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
     credentials: "include",
@@ -56,4 +69,5 @@ export default {
   register,
   validateToken,
   signIn,
+  logout
 };
