@@ -11,7 +11,15 @@ function App() {
           path="/"
           element={
             <Layout>
-              <p>Home Pages</p>
+              <p>Home Page</p>
+            </Layout>
+          }
+        />
+        <Route
+          path="/loggedIn"
+          element={
+            <Layout>
+              <p>Logged In Home</p>
             </Layout>
           }
         />

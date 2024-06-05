@@ -22,7 +22,7 @@ function SignIn() {
   const mutation = useMutation(api.signIn, {
     onSuccess: () => {
       showToast({ message: "Registeration Successful", type: "SUCCESS" });
-      navigate("/");
+      navigate("/loggedIn");
     },
 
     onError: (error: Error) => {
