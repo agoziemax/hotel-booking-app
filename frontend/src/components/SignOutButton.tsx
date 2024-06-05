@@ -12,7 +12,7 @@ function SignOutButton() {
       await queryClient.invalidateQueries("validateToken");
       showToast({ message: "Logged out Successfully", type: "SUCCESS" });
       navigate("/login");
-    },
+    }, 
     onError: (error: Error) => {
       showToast({ message: error.message, type: "ERROR" });
     },
