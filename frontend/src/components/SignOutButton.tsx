@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "react-query";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
-import { useContext } from "react";
+
 
 function SignOutButton() {
   const queryClient = useQueryClient();
@@ -12,7 +12,7 @@ function SignOutButton() {
       await queryClient.invalidateQueries("validateToken");
       showToast({ message: "Logged out Successfully", type: "SUCCESS" });
       navigate("/login");
-    }, 
+    },
     onError: (error: Error) => {
       showToast({ message: error.message, type: "ERROR" });
     },
