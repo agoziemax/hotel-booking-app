@@ -33,6 +33,7 @@ const signIn = async (formData: SignInFormData) => {
     body: JSON.stringify(formData),
   });
   const body = await response.json();
+  console.log(response);
 
   if (!response.ok) {
     throw new Error(body.message);
@@ -41,23 +42,22 @@ const signIn = async (formData: SignInFormData) => {
 };
 
 const signOut = async () => {
-const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
-  method: "POST",
-  credentials: "include",
-});
-//  const body = await response.json();
+  const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
+    method: "POST",
+    credentials: "include",
+  });
+  //  const body = await response.json();
 
- if (!response.ok) {
-   throw new Error("Error during sign out");
- }
-
-}
+  if (!response.ok) {
+    throw new Error("Error during sign out");
+  }
+};
 
 const validateToken = async () => {
   const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
     credentials: "include",
   });
-
+console.log(response)
   if (!response.ok) {
     throw new Error("Invalid token");
   }
@@ -69,5 +69,5 @@ export default {
   register,
   validateToken,
   signIn,
-  signOut
+  signOut,
 };

@@ -15,14 +15,14 @@ function App() {
             </Layout>
           }
         />
-        <Route
+        {/* <Route
           path="/loggedIn"
           element={
             <Layout>
               <p>Logged In Home</p>
             </Layout>
           }
-        />
+        /> */}
         <Route
           path="/search"
           element={
