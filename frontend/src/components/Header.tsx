@@ -15,8 +15,12 @@ function Header() {
         <span className="flex space-x-2">
           {isLoggedIn ? (
             <>
-              <Link to="/my-bookings">My bookings</Link>
-              <Link to="/my-hotels">My hotels</Link>
+              <Link className=" text-white font-bold p-3 flex items-center hover:bg-blue-500" to="/my-bookings">
+                My bookings
+              </Link>
+              <Link className=" text-white font-bold p-3 flex items-center hover:bg-blue-500" to="/my-hotels">
+                My hotels
+              </Link>
               <SignOutButton />
             </>
           ) : (

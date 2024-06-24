@@ -39,7 +39,7 @@ router.post(
         secure: true,
         // secure: process.env.NODE_ENV === "production",
         maxAge: 86400000,
-        sameSite: "none",
+        sameSite: "strict",
       });
       res.status(200).json({ userId: user._id });
     } catch (error) {

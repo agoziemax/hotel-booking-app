@@ -13,7 +13,6 @@ const register = async (formData: RegisterFormData) => {
     },
     body: JSON.stringify(formData),
   });
-  console.log("calling");
 
   const responseBody = await response.json();
 
@@ -23,7 +22,6 @@ const register = async (formData: RegisterFormData) => {
 };
 
 const signIn = async (formData: SignInFormData) => {
-  console.log("login call");
   const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
     method: "POST",
     credentials: "include",
@@ -57,7 +55,7 @@ const validateToken = async () => {
   const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
     credentials: "include",
   });
-console.log(response)
+
   if (!response.ok) {
     throw new Error("Invalid token");
   }

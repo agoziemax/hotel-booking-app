@@ -3,7 +3,6 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 
-
 function SignOutButton() {
   const queryClient = useQueryClient();
   const { showToast } = useAppContext();
@@ -19,8 +18,6 @@ function SignOutButton() {
   });
 
   const handleClick = () => {
-    console.log("SO test");
-
     mutation.mutate();
   };
   const navigate = useNavigate();
