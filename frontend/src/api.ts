@@ -4,7 +4,6 @@ import { RegisterFormData } from "./pages/Register";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const register = async (formData: RegisterFormData) => {
-  console.log("calling");
   const response = await fetch(`${API_BASE_URL}/api/users/register`, {
     method: "POST",
     credentials: "include",
@@ -44,7 +43,6 @@ const signOut = async () => {
     method: "POST",
     credentials: "include",
   });
-  //  const body = await response.json();
 
   if (!response.ok) {
     throw new Error("Error during sign out");

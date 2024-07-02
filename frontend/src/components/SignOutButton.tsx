@@ -6,10 +6,11 @@ import { useAppContext } from "../context/AppContext";
 function SignOutButton() {
   const queryClient = useQueryClient();
   const { showToast } = useAppContext();
+
   const mutation = useMutation(api.signOut, {
     onSuccess: async () => {
       await queryClient.invalidateQueries("validateToken");
-      showToast({ message: "Logged out Successfully", type: "SUCCESS" });
+      showToast({ message: "Signed Out!", type: "SUCCESS" });
       navigate("/login");
     },
     onError: (error: Error) => {
