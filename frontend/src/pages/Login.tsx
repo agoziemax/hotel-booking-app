@@ -22,7 +22,7 @@ function SignIn() {
 
   const mutation = useMutation(api.signIn, {
     onSuccess: async () => {
-      showToast({ message: "Registeration Successful", type: "SUCCESS" });
+      showToast({ message: "Sign In Successful!", type: "SUCCESS" });
       await queryClient.invalidateQueries("validateToken");
       navigate("/");
     },
@@ -38,7 +38,7 @@ function SignIn() {
 
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <p className=" font-bold text-3xl">Sign In</p>
+      <h1 className=" font-bold text-3xl">Sign In</h1>
       <div className="flex flex-col gap-5">
         <label htmlFor="" className="flex-1 text-sm text-gray-700 font-bold">
           Email
