@@ -9,7 +9,7 @@ test("goto base URL", async ({ page }) => {
 
   await expect(page.getByRole("heading", { name: "Sign In" })).toBeVisible();
 
-  await page.locator("[name=email]").fill("1@1.com");
+  await page.locator("[name=email]").fill("e@yopmail.com");
   await page.locator("[name=password]").fill("password");
   await page.getByRole("button", { name: "Sign In" }).click();
   await expect(page.getByText("Sign In Successful!")).toBeVisible();
