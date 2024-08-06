@@ -21,10 +21,6 @@ app.use(
 );
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
-
-// app.get('/api/test', async (req: Request, res: Response) => {
-//   res.json({ message: 'hello from express endpoint' });
-// });
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 
